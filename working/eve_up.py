@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 def api_login():
     data = {"username": "admin", "password": "eve", "html5": 0}
-    url = 'https://10.10.21.28/api/auth/login'
+    url = 'https://192.168.20.128/api/auth/login'
     login = requests.post(url=url, data=json.dumps(data), verify=False)
     if login.status_code == 200:
         cookies = login.cookies
@@ -32,11 +32,11 @@ def query_api(url, time_stamp, cookie):
         'DNT': '1',
         'X-Requested-With': 'XMLHttpRequest',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
-        'Referer': 'https://10.10.21.28/legacy/',
+        'Referer': 'https://192.168.20.128/legacy/',
         'Accept-Language': 'en-US,en;q=0.9',
         'Content-type': 'application/json'
     }
-    api_url = 'https://10.10.21.28/api/'
+    api_url = 'https://192.168.20.128/api/'
     full_url = api_url + url
     logging.info(f"URL:{full_url}")
     nodes = requests.get(url=full_url, headers=headers,
@@ -119,5 +119,5 @@ def get_links(topo=None):
         print("No options given. Use -h for help.")
 
 if __name__ == "__main__":
-    nodes = get_nodes(topo="Juniper/CSPF_MPLS.unl")
+    nodes = get_nodes(topo="juniper_testing.unl")
     print(nodes)

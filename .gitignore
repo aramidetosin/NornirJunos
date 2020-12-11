@@ -2,3 +2,8 @@
 __pycache__/eve_up.cpython-39.pyc
 .env
 nornir.log
+bin
+lib
+pyvenv.cfg
+working/__pycache__/
+.gitignore
