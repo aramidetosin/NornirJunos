@@ -18,10 +18,3 @@ The main.py file deploys MC-LAG on 2 vMX devices serving as PE to a CE
 
 1. Change the host variables as needed
 2. Run main.py
-
-## Contact
-
-- https://dataknox.dev
-- https://twitter.com/data_knox
-- https://learn.gg/dataknox
-- https://youtube.com/c/dataknox
