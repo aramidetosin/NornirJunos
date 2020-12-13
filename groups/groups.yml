@@ -16,6 +16,6 @@ cisco_group:
             auth_strict_key: False
 
 junos_group:
-    username: 'knox'
+    username: 'cisco'
     password: 'juniper1'
     platform: junos

@@ -22,3 +22,569 @@ napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
 2020-11-22 19:11:45,547 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_facts']} on 1 hosts
 2020-11-22 19:16:56,107 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_facts']} on 1 hosts
 2020-11-22 19:21:39,346 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_facts']} on 1 hosts
+2020-12-13 02:02:01,951 -  nornir.core -     INFO -        run() - Running task 'main' with args {} on 9 hosts
+2020-12-13 02:03:15,738 -  nornir.core -     INFO -        run() - Running task 'isis_config' with args {} on 6 hosts
+2020-12-13 02:03:23,368 - nornir.core.task -    ERROR -      start() - Host 'vMX8': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:03:23,369 - nornir.core.task -    ERROR -      start() - Host 'vMX8': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:03:24,095 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:03:24,096 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:03:24,695 - nornir.core.task -    ERROR -      start() - Host 'vMX7': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:03:24,695 - nornir.core.task -    ERROR -      start() - Host 'vMX7': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:03:24,985 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:03:24,985 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:03:25,072 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:03:25,072 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:03:25,242 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:03:25,243 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:06:02,515 -  nornir.core -     INFO -        run() - Running task 'isis_config' with args {} on 6 hosts
+2020-12-13 02:06:09,537 - nornir.core.task -    ERROR -      start() - Host 'vMX7': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:06:09,537 - nornir.core.task -    ERROR -      start() - Host 'vMX7': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:06:11,026 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:06:11,026 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:06:11,548 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:06:11,548 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:06:12,206 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:06:12,206 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:06:12,825 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:06:12,825 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:06:13,086 - nornir.core.task -    ERROR -      start() - Host 'vMX8': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:06:13,086 - nornir.core.task -    ERROR -      start() - Host 'vMX8': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:06:41,248 -  nornir.core -     INFO -        run() - Running task 'main' with args {} on 9 hosts
+2020-12-13 02:07:04,419 -  nornir.core -     INFO -        run() - Running task 'isis_config' with args {} on 6 hosts
+2020-12-13 02:07:11,991 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:07:11,992 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:07:12,574 - nornir.core.task -    ERROR -      start() - Host 'vMX7': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:07:12,575 - nornir.core.task -    ERROR -      start() - Host 'vMX7': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:07:12,616 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:07:12,617 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:07:13,302 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:07:13,302 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:07:13,481 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:07:13,481 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:07:13,778 - nornir.core.task -    ERROR -      start() - Host 'vMX8': task 'config ISIS Protocol' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_config.py", line 24, in pyez_config
+    config.load(template_path=template_path,
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 557, in load
+    template = self.dev.Template(path)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 516, in Template
+    return self._j2ldr.get_template(filename, parent, gvars)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/jnpr/junos/device.py", line 73, in get_source
+    raise jinja2.TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /mnt/c/NornirJunos/isis_config.j2
+
+2020-12-13 02:07:13,778 - nornir.core.task -    ERROR -      start() - Host 'vMX8': task 'isis_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/PycharmProjects/NornirJunos/config_isis.py", line 22, in isis_config
+    response = task.run(task=pyez_config, template_path='/mnt/c/NornirJunos/isis_config.j2',
+  File "/Users/aramide/PycharmProjects/NornirJunos/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: config ISIS Protocol (failed)
+
+
+2020-12-13 02:08:51,489 -  nornir.core -     INFO -        run() - Running task 'isis_config' with args {} on 6 hosts
+2020-12-13 02:12:15,408 -  nornir.core -     INFO -        run() - Running task 'rsvp_config' with args {} on 6 hosts
+2020-12-13 02:38:03,875 -  nornir.core -     INFO -        run() - Running task 'isis_config' with args {} on 6 hosts

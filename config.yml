@@ -2,9 +2,9 @@
 inventory:
     plugin: YAMLInventory
     options:
-        host_file: '/mnt/c/NornirJunos/hosts/hosts.yml'
-        group_file: '/mnt/c/NornirJunos/groups/groups.yml'
-        defaults_file: '/mnt/c/NornirJunos/defaults/defaults.yml'
+        host_file: '/Users/aramide/PycharmProjects/NornirJunos/hosts/hosts.yml'
+        group_file: '/Users/aramide/PycharmProjects/NornirJunos/groups/groups.yml'
+        defaults_file: '/Users/aramide/PycharmProjects/NornirJunos/defaults/defaults.yml'
 
 runner:
     plugin: threaded

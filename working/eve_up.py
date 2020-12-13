@@ -119,5 +119,5 @@ def get_links(topo=None):
         print("No options given. Use -h for help.")
 
 if __name__ == "__main__":
-    nodes = get_nodes(topo="juniper_testing.unl")
+    nodes = get_nodes(topo="NornirJunos.unl")
     print(nodes)
