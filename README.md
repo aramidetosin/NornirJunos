@@ -18,3 +18,10 @@ The main.py file deploys MC-LAG on 2 vMX devices serving as PE to a CE
 
 1. Change the host variables as needed
 2. Run main.py
+
+## Interface config
+
+![alt text](https://github.com/DataKnox/NornirJunos/blob/main/pics/topo2.png?raw=true)
+
+1. interfaces.j2
+2. config_ints.py
