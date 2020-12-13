@@ -2,7 +2,7 @@
 
 Automating Stuff with Nornir and nornir_pyez
 
-![alt text](https://github.com/DataKnox/NornirJunos/blob/main/pics/topo.png?raw=true)
+![alt text](https://github.com/aramidetosin/NornirJunos/blob/main/pics/topo.png?raw=true)
 
 ## Requirements
 
@@ -21,7 +21,7 @@ The main.py file deploys MC-LAG on 2 vMX devices serving as PE to a CE
 
 ## Interface config
 
-![alt text](https://github.com/DataKnox/NornirJunos/blob/main/pics/topo2.png?raw=true)
+![alt text](https://github.com/aramidetosin/NornirJunos/blob/main/pics/topo2.png?raw=true)
 
 1. interfaces.j2
 2. config_ints.py
